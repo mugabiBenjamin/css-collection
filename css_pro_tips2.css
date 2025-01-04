@@ -1,0 +1,169 @@
+/*************** resize */
+.element {
+    resize: both;
+    /* works with overflow hidden */
+}
+
+
+
+/*************** new morphism */
+body {
+    background: #f9f9f9;    /* very light grey bg */
+}
+
+.element:hover {
+    box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1),
+    -10px -10px -10px white inset;  /* toggle the word inset */
+    /* make the top left shadow slightly lighter than the bg color */
+
+}
+
+
+
+/*************** checkboxes */
+/* 
+<input type="checkbox" id="mycheckbox">
+<label for="mycheckbox">My Label</label>
+*/
+
+.container {
+    display: none;
+    width: min(800px, 90%);  /* always returns the smaller value */
+    /* 
+    on desktop 800px the smaller while on smaller screens 90% is the smaller 
+    */
+
+    width: clamp(400px, 50vw, 800px);
+    /* 
+    400px is the min
+    50vw is thr preferred
+    800px is the max
+    */
+}
+
+#mycheckbox:checked ~ .container {
+    display: block;
+}
+
+#mycheckbox {
+    display: none;
+}
+
+
+
+/*************** glass morphism */
+.glass {
+    backdrop-filter: blur(10px);
+}
+
+
+
+/*************** :not() and :has() */
+.button:not(:first-child) {
+    border-color: red;  /* excludes */
+}
+
+/* 
+<button>Button</button>
+<button>Button</button>
+<button>Info <svg xmlns=" "> </button>
+<button>Security <svg xmlns=" "> </button>
+<button>Ideas <svg xmlns=" "> </button>
+*/
+.button:has(svg) {
+    padding-right: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    fill: white;
+}
+
+/* 
+<select>
+    <option value="light">lightmode</option>
+    <option value="dark">darkmode</option>
+</select>
+*/
+body:has(option[value="dark"]:checked) {
+    background: black;
+    color: white;
+}
+
+
+
+/*************** gradient on text */
+h1 {
+    background: linear-gradient(to right, red, blue);
+    background-clip: text;
+    color: transparent;
+}
+
+
+
+/*************** dropdown */
+.dropdown {
+    display: none;
+}
+
+.my-button:focus-within .dropdown {
+    display: flex;
+}
+
+
+
+/*************** numbering headings */
+:root {
+    counter-reset: headings;
+}
+
+h2 {
+    counter-increment: headings;
+}
+
+h2::before {
+    content: counter(headings );
+    background: #0071FF;
+    border-radius: 2px;
+    padding: .15rem 0;
+    width: 40px;
+    text-align: center;
+}
+
+
+
+/*************** swipper */
+/* 
+<div class="wrapper">
+    <div class="card">
+        <h2></h2>
+        <p></p>
+    </div>
+    <div class="card">
+        <h2></h2>
+        <p></p>
+    </div>
+    <div class="card">
+        <h2></h2>
+        <p></p>
+    </div>
+</div>
+*/
+.wrapper {
+    display: flex;
+    gap: 20px;
+    width: 300px;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;  /* mandatory || proximity */
+}
+
+.card {
+    scroll-snap-align: center;
+    box-sizing: border-box;
+    padding: 20px 30px;
+    flex-shrink: 0;
+    width: 300px;
+    background: white;
+    border-radius: 14px;
+    text-align: center;
+}
+
