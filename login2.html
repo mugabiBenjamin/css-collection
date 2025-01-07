@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Animated Login</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <!-- Boxicons -->
+
     <style>
         * {
             margin: 0;
@@ -47,6 +49,17 @@
             box-shadow: 0 0 20px rgba(0, 0, 0, .2);
         }
 
+        #btn {
+            top: 0;
+            left: 0;
+            position: absolute;
+            width: 110px;
+            height: 100%;
+            background: white;
+            border-radius: 30px;
+            transition: .5s ease-in-out;
+        }
+
         .button-box {
             width: 220px;
             margin: 35px auto;
@@ -72,40 +85,33 @@
             transform: scale(1.1);
         }
 
-        #btn {
-            top: 0;
-            left: 0;
-            position: absolute;
-            width: 110px;
-            height: 100%;
-            background: white;
-            border-radius: 30px;
-            transition: .5s ease-in-out;
-        }
-
         .social-icons {
             margin: 30px auto;
             color: white;
-            box-shadow: 0 0 20px #7f7f7f3d;
             cursor: pointer;
-            transition: .2s ease-out;
+            display: flex;
+            justify-content: center;
+            column-gap: 40px;
+            font-size: 35px;
+            transition: .2s ease-out; 
         }
 
         .social-icons i:hover {
-            transform: scale(1.2);
+            transform: scale(1.1);
+            filter: drop-shadow(1px 1px 20px rgba(0, 0, 0, .7));
         }
 
         .input-group {
-            top: 180px;
+            top: 165px;
             position: absolute;
             width: 280px;
             transition: .5s ease-in-out;
         }
-
+        
         .input-field {
             width: 100%;
             padding: 10px 0;
-            margin: 5px 0;
+            margin: 10px 0;
             border-left: 0;
             border-top: 0;
             border-right: 0;
@@ -140,7 +146,6 @@
         }
 
         span {
-            /* color: #777; */
             font-size: 12px;
             bottom: 68px;
             position: absolute;
@@ -157,6 +162,7 @@
 
         input::placeholder {
             color: white;
+            font-size: 14px;
         }
 
         .terms {
@@ -173,18 +179,19 @@
                 <button type="button" class="toggle-btn" onclick="login()">Login</button>
                 <button type="button" class="toggle-btn" onclick="register()">Register</button>
             </div>
+
             <div class="social-icons">
-                <i class="bx bxl-facebook-circle"></i>
+                <i class='bx bxl-linkedin'></i>
                 <i class="bx bxl-instagram"></i>
-                <i class="bx bxl-twitter"></i>
+                <i class='bx bxl-github'></i>
             </div>
+
             <form action="" id="login" class="input-group">
                 <input type="text" class="input-field" placeholder="Username">
                 <input type="text" class="input-field" placeholder="Enter password">
                 <input type="checkbox" class="check-box">
                 <span>Remember Password</span>
                 <button type="submit" class="submit-btn">Login</button>
-
             </form>
 
             <form action="" id="register" class="input-group">
@@ -215,6 +222,7 @@
             button.style.left = "0";
         }
     </script>
+    <!-- <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script> -->
 </body>
 
 </html>
