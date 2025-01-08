@@ -24,36 +24,31 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
             overflow: hidden;
-        }
 
-        .hero {
-            height: 100%;
-            width: 100%;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
         .form-box {
             width: 380px;
             height: 480px;
-            position: relative;
             margin: 6% auto;
             background: rgba(255, 255, 255, .1);
             border: 2px solid rgba(255, 255, 255, .2);
             backdrop-filter: blur(20px);
-            padding: 5px;
+            padding: 10px;
             border-radius: 2em;
             overflow: hidden;
-            box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+            box-shadow: 0 0 20px rgba(0, 0, 0, .75);
         }
 
         #btn {
             top: 0;
             left: 0;
             position: absolute;
-            width: 110px;
+            width: 100px;
             height: 100%;
             background: white;
             border-radius: 30px;
@@ -61,7 +56,7 @@
         }
 
         .button-box {
-            width: 220px;
+            width: 200px;
             margin: 35px auto;
             position: relative;
             background: rgba(255, 255, 255, .2);
@@ -69,45 +64,58 @@
             border-radius: 30px;
         }
 
+        .toggle {
+            display: flex;
+            justify-content: space-around;
+            column-gap: 5px;
+        }
+
         .toggle-btn {
-            padding: 10px 30px;
             cursor: pointer;
             background: transparent;
             border: 0;
             outline: none;
             position: relative;
             color: black;
-            font-weight: 400;
             transition: .3s ease-in-out;
+            font-weight: 900;
         }
 
         .toggle-btn:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
+        }
+
+        .login {
+            padding: 10px 30px;
+        }
+
+        .register {
+            padding: 10px 20px;
         }
 
         .social-icons {
-            margin: 30px auto;
+            margin: 35px auto;
             color: white;
             cursor: pointer;
             display: flex;
             justify-content: center;
             column-gap: 40px;
             font-size: 35px;
-            transition: .2s ease-out; 
+            transition: .2s ease-out;
         }
 
         .social-icons i:hover {
-            transform: scale(1.1);
-            filter: drop-shadow(1px 1px 20px rgba(0, 0, 0, .7));
+            transform: scale(1.05);
+            filter: drop-shadow(1px 1px 20px rgba(0, 0, 0, .75));
         }
 
         .input-group {
-            top: 165px;
+            margin-top: -20px;
             position: absolute;
             width: 280px;
             transition: .5s ease-in-out;
         }
-        
+
         .input-field {
             width: 100%;
             padding: 10px 0;
@@ -118,6 +126,9 @@
             border-bottom: 1px solid #fff;
             outline: none;
             background: transparent;
+            color: white;
+            caret-color: white;
+            font-size: 15px;
         }
 
         .submit-btn {
@@ -133,6 +144,8 @@
             border-radius: 30px;
             border: 2px solid transparent;
             transition: .3s ease-in-out;
+            font-weight: bold;
+            font-size: 14px;
         }
 
         .submit-btn:hover {
@@ -146,7 +159,7 @@
         }
 
         span {
-            font-size: 12px;
+            font-size: 14px;
             bottom: 68px;
             position: absolute;
             color: white;
@@ -162,7 +175,7 @@
 
         input::placeholder {
             color: white;
-            font-size: 14px;
+            font-size: 15px;
         }
 
         .terms {
@@ -172,57 +185,63 @@
 </head>
 
 <body>
-    <div class="hero">
-        <div class="form-box">
-            <div class="button-box">
-                <div id="btn"></div>
-                <button type="button" class="toggle-btn" onclick="login()">Login</button>
-                <button type="button" class="toggle-btn" onclick="register()">Register</button>
+    <div class="form-box">
+        <div class="button-box">
+            <div id="btn"></div>
+            <div class="toggle">
+                <button type="button" class="toggle-btn login" onclick="login()">Login</button>
+                <button type="button" class="toggle-btn register" onclick="register()">Register</button>
             </div>
-
-            <div class="social-icons">
-                <i class='bx bxl-linkedin'></i>
-                <i class="bx bxl-instagram"></i>
-                <i class='bx bxl-github'></i>
-            </div>
-
-            <form action="" id="login" class="input-group">
-                <input type="text" class="input-field" placeholder="Username">
-                <input type="text" class="input-field" placeholder="Enter password">
-                <input type="checkbox" class="check-box">
-                <span>Remember Password</span>
-                <button type="submit" class="submit-btn">Login</button>
-            </form>
-
-            <form action="" id="register" class="input-group">
-                <input type="text" class="input-field" placeholder="Username">
-                <input type="email" class="input-field" placeholder="Email">
-                <input type="password" class="input-field" placeholder="Enter password">
-                <input type="checkbox" class="check-box">
-                <span>I agree to the <a href="#">Terms & Conditions</a></span>
-                <button type="submit" class="submit-btn">Login</button>
-            </form>
         </div>
+
+        <div class="social-icons">
+            <i class='bx bxl-linkedin'></i>
+            <i class="bx bxl-instagram"></i>
+            <i class='bx bxl-github'></i>
+        </div>
+
+        <form action="" id="login" class="input-group">
+            <input type="text" class="input-field" placeholder="Username">
+            <input type="text" class="input-field" placeholder="Enter password">
+            <input type="checkbox" class="check-box">
+            <span>Remember Password</span>
+            <button type="submit" class="submit-btn">Login</button>
+        </form>
+
+        <form action="" id="register" class="input-group">
+            <input type="text" class="input-field" placeholder="Username">
+            <input type="email" class="input-field" placeholder="Email">
+            <input type="password" class="input-field" placeholder="Enter password">
+            <input type="checkbox" class="check-box">
+            <span>I agree to the <a href="#">Terms & Conditions</a></span>
+            <button type="submit" class="submit-btn">Register</button>
+        </form>
     </div>
 
     <script>
-        let log = document.getElementById("login");
-        let reg = document.getElementById("register");
-        let button = document.getElementById("btn");
-
-        function register() {
-            log.style.left = "-400px";
-            reg.style.left = "50px"
-            button.style.left = "110px";
-        }
+        const log = document.getElementById("login");
+        const reg = document.getElementById("register");
+        const button = document.getElementById("btn");
+        // const loginBtn = document.querySelector(".login");
+        // const registerBtn = document.querySelector(".register");
 
         function login() {
             log.style.left = "50px";
             reg.style.left = "450px";
             button.style.left = "0";
+            // loginBtn.style.fontWeight = "900";
+            // registerBtn.style.fontWeight = "normal";
         }
+        function register() {
+            log.style.left = "-400px";
+            reg.style.left = "50px"
+            button.style.left = "100px";
+            // registerBtn.style.fontWeight = "900";
+            // loginBtn.style.fontWeight = "normal";
+        }
+
+        
     </script>
-    <!-- <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script> -->
 </body>
 
 </html>
