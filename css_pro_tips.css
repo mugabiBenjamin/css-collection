@@ -9,6 +9,7 @@ button::after {
     padding: .1rem;
     left: 50%;
     top: 50%;
+
     /* transform: translate(-50%, -50%); */
     translate: -50%, -50%;
     z-index: -1;
@@ -37,7 +38,7 @@ button {
 
 .layout-container {
     width: min(100px, 100%);    /* responsive with */
-    margin: 0 auto;     /* centers the layout */
+    margin: 0 auto;             /* centers the layout */
     columns: 3 300px;
     column-gap: 1rem;
 }
@@ -45,6 +46,7 @@ button {
 img {
     width: 100%;    /* makes the images resize automatically */
     /* images are inline elements so they're bound to their line-height */
+
     display: block;
     margin-bottom: 1rem;
 }
@@ -98,7 +100,7 @@ input {
     background: #282a32;
     color: #a3abbf;
 
-    height: 100px;  /* Ffixed height */
+    height: 100px;      /* Fixed height */
     overflow-y: auto;   /* only containers that have overflowing text */
 }
 
@@ -155,6 +157,7 @@ container.addEventListener('click', () => {
 
 
 /*************** clip path */
+
 /* css clip path online generator */
 img {
     clip-path:polygon(50% 0%, 0% 100%, 100% 100%);
