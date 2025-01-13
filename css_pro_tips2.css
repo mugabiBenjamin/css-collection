@@ -14,8 +14,8 @@ body {
 .element:hover {
     box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1),
     -10px -10px -10px white inset;  /* toggle the word inset */
-    /* make the top left shadow slightly lighter than the bg color */
 
+    /* make the top left shadow slightly lighter than the bg color */
 }
 
 
@@ -34,6 +34,7 @@ body {
     */
 
     width: clamp(400px, 50vw, 800px);
+
     /* 
     400px is the min
     50vw is thr preferred
@@ -84,6 +85,7 @@ body {
     <option value="dark">darkmode</option>
 </select>
 */
+
 body:has(option[value="dark"]:checked) {
     background: black;
     color: white;
@@ -148,12 +150,13 @@ h2::before {
     </div>
 </div>
 */
+
 .wrapper {
     display: flex;
     gap: 20px;
     width: 300px;
     overflow-x: scroll;
-    scroll-snap-type: x mandatory;  /* mandatory || proximity */
+    scroll-snap-type: x mandatory;      /* mandatory || proximity */
 }
 
 .card {
