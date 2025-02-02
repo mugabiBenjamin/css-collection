@@ -7,6 +7,16 @@
     <title>Switch Buttons</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+        :root {
+            --switch-width: 60px;
+            --switch-height: 34px;
+            --switch-bg-color: #ddd;
+            --switch-checked-bg-color: maroon;
+            --switch-handle-color: #fff;
+            --switch-handle-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+            --switch-transition: 0.3s;
+        }
+
         *,
         ::before,
         ::after {
@@ -33,8 +43,8 @@
         .switch {
             position: relative;
             display: inline-block;
-            width: 60px;
-            height: 34px;
+            width: var(--switch-width);
+            height: var(--switch-height);
         }
 
         .switch-input {
@@ -45,22 +55,23 @@
             display: block;
             width: 100%;
             height: 100%;
-            background: #ddd;
-            border-radius: 17px;
+            background: var(--switch-bg-color);
+            border-radius: calc(var(--switch-height) / 2);
             cursor: pointer;
             position: relative;
+            transition: background-color var(--switch-transition);
         }
 
         .switch-handle {
             position: absolute;
             top: 4px;
             left: 4px;
-            width: 26px;
-            height: 26px;
-            background: #fff;
+            width: calc(var(--switch-height) - 8px);
+            height: calc(var(--switch-height) - 8px);
+            background: var(--switch-handle-color);
             border-radius: 50%;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-            transition: left 0.3s;
+            box-shadow: var(--switch-handle-shadow);
+            transition: left var(--switch-transition);
         }
 
         .switch-input:checked ~ .switch-handle {
@@ -68,7 +79,12 @@
         }
 
         .switch-input:checked + .switch-bg {
-            background-color: aqua;
+            background-color: var(--switch-checked-bg-color);
+        }
+
+        .switch-input:focus + .switch-bg {
+            outline: 2px solid #000;
+            outline-offset: 2px;
         }
     </style>
 </head>
@@ -76,17 +92,17 @@
 <body>
     <div class="switch-container">
         <label class="switch">
-            <input type="checkbox" class="switch-input">
+            <input type="checkbox" class="switch-input" aria-label="Switch 1">
             <span class="switch-bg"></span>
             <span class="switch-handle"></span>
         </label>
         <label class="switch">
-            <input type="checkbox" class="switch-input">
+            <input type="checkbox" class="switch-input" aria-label="Switch 2">
             <span class="switch-bg"></span>
             <span class="switch-handle"></span>
         </label>
         <label class="switch">
-            <input type="checkbox" class="switch-input">
+            <input type="checkbox" class="switch-input" aria-label="Switch 3">
             <span class="switch-bg"></span>
             <span class="switch-handle"></span>
         </label>
