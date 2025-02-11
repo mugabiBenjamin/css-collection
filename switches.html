@@ -74,15 +74,15 @@
             transition: left var(--switch-transition);
         }
 
-        .switch-input:checked ~ .switch-handle {
+        .switch-input:checked~.switch-handle {
             left: calc(100% - 30px);
         }
 
-        .switch-input:checked + .switch-bg {
+        .switch-input:checked+.switch-bg {
             background-color: var(--switch-checked-bg-color);
         }
 
-        .switch-input:focus + .switch-bg {
+        .switch-input:focus+.switch-bg {
             outline: 2px solid #000;
             outline-offset: 2px;
         }

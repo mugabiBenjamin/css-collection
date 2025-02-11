@@ -8,12 +8,14 @@
 
 /*************** new morphism */
 body {
-    background: #f9f9f9;    /* very light grey bg */
+    background: #f9f9f9;
+    /* very light grey bg */
 }
 
 .element:hover {
     box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1),
-    -10px -10px -10px white inset;  /* toggle the word inset */
+        -10px -10px -10px white inset;
+    /* toggle the word inset */
 
     /* make the top left shadow slightly lighter than the bg color */
 }
@@ -28,7 +30,8 @@ body {
 
 .container {
     display: none;
-    width: min(800px, 90%);  /* always returns the smaller value */
+    width: min(800px, 90%);
+    /* always returns the smaller value */
     /* 
     on desktop 800px the smaller while on smaller screens 90% is the smaller 
     */
@@ -42,7 +45,7 @@ body {
     */
 }
 
-#mycheckbox:checked ~ .container {
+#mycheckbox:checked~.container {
     display: block;
 }
 
@@ -61,7 +64,8 @@ body {
 
 /*************** :not() and :has() */
 .button:not(:first-child) {
-    border-color: red;  /* excludes */
+    border-color: red;
+    /* excludes */
 }
 
 /* 
@@ -123,7 +127,7 @@ h2 {
 }
 
 h2::before {
-    content: counter(headings );
+    content: counter(headings);
     background: #0071FF;
     border-radius: 2px;
     padding: .15rem 0;
@@ -156,7 +160,8 @@ h2::before {
     gap: 20px;
     width: 300px;
     overflow-x: scroll;
-    scroll-snap-type: x mandatory;      /* mandatory || proximity */
+    scroll-snap-type: x mandatory;
+    /* mandatory || proximity */
 }
 
 .card {
@@ -169,4 +174,3 @@ h2::before {
     border-radius: 14px;
     text-align: center;
 }
-

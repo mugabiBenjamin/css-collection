@@ -37,14 +37,17 @@ button {
 */
 
 .layout-container {
-    width: min(100px, 100%);    /* responsive with */
-    margin: 0 auto;             /* centers the layout */
+    width: min(100px, 100%);
+    /* responsive with */
+    margin: 0 auto;
+    /* centers the layout */
     columns: 3 300px;
     column-gap: 1rem;
 }
 
 img {
-    width: 100%;    /* makes the images resize automatically */
+    width: 100%;
+    /* makes the images resize automatically */
     /* images are inline elements so they're bound to their line-height */
 
     display: block;
@@ -66,7 +69,7 @@ input {
 
 
 /*************** inset */
- .parent {
+.parent {
     border: 3px solid white;
     height: 300px;
     width: 300px;
@@ -100,8 +103,10 @@ input {
     background: #282a32;
     color: #a3abbf;
 
-    height: 100px;      /* Fixed height */
-    overflow-y: auto;   /* only containers that have overflowing text */
+    height: 100px;
+    /* Fixed height */
+    overflow-y: auto;
+    /* only containers that have overflowing text */
 }
 
 
@@ -129,7 +134,8 @@ input {
     background: #2a2f3d;
     color: white;
     cursor: pointer;
-    transition: .5s ease;   /* can't work at height auto */
+    transition: .5s ease;
+    /* can't work at height auto */
 
     display: grid;
     grid-template-rows: 1.5rem 0fr;
@@ -144,7 +150,8 @@ p {
 }
 
 .hidden {
-    overflow: hidden;   /* the row with content */
+    overflow: hidden;
+    /* the row with content */
 }
 
 /* 
@@ -160,7 +167,7 @@ container.addEventListener('click', () => {
 
 /* css clip path online generator */
 img {
-    clip-path:polygon(50% 0%, 0% 100%, 100% 100%);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 }
 
 input[type="checkbox"] {
@@ -230,7 +237,8 @@ input[type="checkbox"] {
     from {
         --angle: 0deg;
     }
+
     to {
-        --angle: 360deg; 
+        --angle: 360deg;
     }
 }
