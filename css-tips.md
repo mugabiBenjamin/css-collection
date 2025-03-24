@@ -389,3 +389,52 @@ h2::before {
 ```
 
 [Back to top](#table-of-contents)
+
+## Relative padding
+
+```css
+.element {
+  padding: min(5rem, 8%);
+  /* Ensures padding is responsive: 
+     - 5rem is the maximum padding
+     - 8% is the relative padding based on the container's width 
+  */
+  width: 400px;
+  background: white;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  box-rading: 1em;
+}
+```
+
+# Responsive font-sizes
+
+```css
+h1 {
+  font-size: clamp(1.8rem, calc(7vw + 1rem), 5rem);
+  /* 
+    1.8rem is the min
+    calc(7vw + 1rem) is the preferred and responds to zooming
+    5rem is the max
+    */
+}
+```
+
+# Responsive Images
+
+```css
+img {
+  max-width: 100%;
+  height: auto;
+  /* keeps the aspect ratio */
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+```
+
+```html
+<img
+  width="500"
+  height="750"
+  src="https://images.pexels.com/photos/25252455/pexels-photo-25252455/free-photo-of-thick-clouds-in-black-and-white.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+/>
+```
