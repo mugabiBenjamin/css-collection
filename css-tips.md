@@ -407,7 +407,7 @@ h2::before {
 }
 ```
 
-# Responsive font-sizes
+## Responsive font-sizes
 
 ```css
 h1 {
@@ -420,7 +420,7 @@ h1 {
 }
 ```
 
-# Responsive Images
+## Responsive Images
 
 ```css
 img {
