@@ -1,5 +1,6 @@
 ## Table of contents
 
+- [css `@layer` specificity](#css-layer-specificity)
 - [gradient on a border](#gradient-on-a-border)
 - [no grid, no flexbox for image gallery](#no-grid-no-flexbox-for-image-gallery)
 - [accent-color, caret-color](#accent-color-caret-color)
@@ -20,6 +21,12 @@
 - [Relative padding](#relative-padding)
 - [Responsive font-sizes](#responsive-font-sizes)
 - [Responsive Images](#responsive-images)
+
+## css `@layer` specificity
+
+```css
+@layer reset framework theme base components utilities custom;
+```
 
 ## gradient on a border
 
