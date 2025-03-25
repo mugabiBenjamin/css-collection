@@ -17,6 +17,9 @@
 - [dropdown](#dropdown)
 - [numbering headings](#numbering-headings)
 - [swipper](#swipper)
+- [Relative padding](#relative-padding)
+- [Responsive font-sizes](#responsive-font-sizes)
+- [Responsive Images](#responsive-images)
 
 ## gradient on a border
 
@@ -388,8 +391,6 @@ h2::before {
 }
 ```
 
-[Back to top](#table-of-contents)
-
 ## Relative padding
 
 ```css
@@ -438,3 +439,5 @@ img {
   src="https://images.pexels.com/photos/25252455/pexels-photo-25252455/free-photo-of-thick-clouds-in-black-and-white.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
 />
 ```
+
+[Back to top](#table-of-contents)
