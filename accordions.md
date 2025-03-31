@@ -174,6 +174,28 @@
         </div>
       </li>
     </ul>
+
+    <script>
+      document
+        .querySelectorAll("input[type='checkbox']")
+        .forEach((checkbox) => {
+          checkbox.addEventListener("change", function () {
+            document
+              .querySelectorAll("input[type='checkbox']")
+              .forEach((cb) => {
+                if (cb !== this) {
+                  cb.checked = false;
+                  cb.nextElementSibling.setAttribute("aria-expanded", "false");
+                }
+              });
+
+            this.nextElementSibling.setAttribute(
+              "aria-expanded",
+              this.checked ? "true" : "false"
+            );
+          });
+        });
+    </script>
   </body>
 </html>
 ```
