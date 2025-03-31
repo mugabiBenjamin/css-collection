@@ -107,25 +107,27 @@
     <ul class="accordion">
       <li>
         <input type="checkbox" id="first" />
-        <label for="first"
+        <label for="first" role="button" aria-expanded="false"
           >What is HTML? <span class="greater">&gt;</span></label
         >
-        <div class="content">
+        <div class="content" id="content-first">
           <p>
-            The HyperText Markup Language or HTML is the standard markup
-            language for documents designed to be displayed in a web browser. It
-            can be assisted by technologies such as Cascading Style Sheets and
+            HTML is the standard markup language for creating web pages. The
+            HyperText Markup Language is the standard markup language for
+            documents designed to be displayed in a web browser. It can be
+            assisted by technologies such as Cascading Style Sheets and
             scripting languages such as JavaScript.
           </p>
         </div>
       </li>
       <li>
         <input type="checkbox" id="second" />
-        <label for="second"
+        <label for="second" role="button" aria-expanded="false"
           >What is CSS? <span class="greater">&gt;</span></label
         >
-        <div class="content">
+        <div class="content" id="content-second">
           <p>
+            CSS is used to style web pages and make them visually appealing.
             Cascading Style Sheets is a style sheet language used for describing
             the presentation of a document written in a markup language such as
             HTML. CSS is a cornerstone technology of the World Wide Web,
@@ -135,41 +137,45 @@
       </li>
       <li>
         <input type="checkbox" id="third" />
-        <label for="third"
+        <label for="third" role="button" aria-expanded="false"
           >What is JavaScript? <span class="greater">&gt;</span></label
         >
-        <div class="content">
+        <div class="content" id="content-third">
           <p>
-            JavaScript, often abbreviated JS, is a programming language that is
-            one of the core technologies of the World Wide Web, alongside HTML
-            and CSS. Over 97% of websites use JavaScript on the client side for
-            web page behavior, often third-party libraries.
+            JavaScript is a programming language that makes web pages
+            interactive. JavaScript, often abbreviated JS alongside HTML and
+            CSS. Over 97% of websites use JavaScript on the client side for web
+            page behavior, often third-party libraries.
           </p>
         </div>
       </li>
       <li>
         <input type="checkbox" id="fourth" />
-        <label for="fourth"
+        <label for="fourth" role="button" aria-expanded="false"
           >What is React? <span class="greater">&gt;</span></label
         >
-        <div class="content">
+        <div class="content" id="content-fourth">
           <p>
-            React is a free and open-source front-end JavaScript library for
-            building user interfaces based on UI components. It is maintained by
-            Meta and a community of individual developers and companies.
+            React is a JavaScript library for building dynamic user interfaces.
+            It is maintained by Meta and a community of individual developers
+            and companies. React can be used as a base in the development of
+            single-page or mobile applications. It is free and open-source.
           </p>
         </div>
       </li>
       <li>
         <input type="checkbox" id="fifth" />
-        <label for="fifth"
+        <label for="fifth" role="button" aria-expanded="false"
           >What is Node.js? <span class="greater">&gt;</span></label
         >
-        <div class="content">
+        <div class="content" id="content-fifth">
           <p>
-            Node.js is an open-source, cross-platform, back-end JavaScript
-            runtime environment that runs on the V8 engine and executes
-            JavaScript code outside a web browser.
+            Node.js is a runtime environment that allows JavaScript to run
+            server-side. Node.js is an open-source, cross-platform, back-end
+            JavaScript runtime environment that runs on the V8 JavaScript engine
+            and executes JavaScript code outside a web browser. Node.js lets
+            developers use JavaScript to write command line tools and for
+            server-side scripts.
           </p>
         </div>
       </li>
