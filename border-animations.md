@@ -51,7 +51,7 @@
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: -1;
-        padding: 10px;
+        padding: 5px;
         border-radius: 10px;
         animation: spin 3s linear infinite;
       }
