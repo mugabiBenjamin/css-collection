@@ -7,7 +7,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Switch Buttons</title>
-    <link rel="stylesheet" href="styles.css" />
     <style>
       :root {
         --switch-width: 60px;
@@ -16,7 +15,7 @@
         --switch-checked-bg-color: maroon;
         --switch-handle-color: #fff;
         --switch-handle-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-        --switch-transition: 0.3s;
+        --switch-transition: 0.3s ease-in-out;
       }
 
       *,
@@ -33,6 +32,7 @@
         align-items: center;
         height: 100vh;
         font-family: Arial, sans-serif;
+        background: #f4f4f4;
       }
 
       .switch-container {
@@ -44,9 +44,11 @@
 
       .switch {
         position: relative;
-        display: inline-block;
+        display: inline-flex;
         width: var(--switch-width);
         height: var(--switch-height);
+        align-items: center;
+        cursor: pointer;
       }
 
       .switch-input {
@@ -54,14 +56,12 @@
       }
 
       .switch-bg {
-        display: block;
         width: 100%;
         height: 100%;
         background: var(--switch-bg-color);
         border-radius: calc(var(--switch-height) / 2);
-        cursor: pointer;
-        position: relative;
-        transition: background-color var(--switch-transition);
+        transition: background-color var(--switch-transition), box-shadow 0.3s
+            ease-in-out;
       }
 
       .switch-handle {
@@ -73,18 +73,27 @@
         background: var(--switch-handle-color);
         border-radius: 50%;
         box-shadow: var(--switch-handle-shadow);
-        transition: left var(--switch-transition);
+        transition: transform var(--switch-transition), box-shadow 0.3s
+            ease-in-out;
       }
 
+      /* Use transform instead of left */
       .switch-input:checked ~ .switch-handle {
-        left: calc(100% - 30px);
+        transform: translateX(calc(var(--switch-width) - var(--switch-height)));
       }
 
       .switch-input:checked + .switch-bg {
         background-color: var(--switch-checked-bg-color);
+        box-shadow: 0px 0px 10px rgba(128, 0, 0, 0.5);
+        /* Subtle glow effect */
       }
 
-      .switch-input:focus + .switch-bg {
+      .switch-input:checked ~ .switch-handle {
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Accessibility: Focus outline */
+      .switch-input:focus-visible + .switch-bg {
         outline: 2px solid #000;
         outline-offset: 2px;
       }
@@ -93,17 +102,17 @@
 
   <body>
     <div class="switch-container">
-      <label class="switch">
+      <label class="switch" role="switch" aria-checked="false">
         <input type="checkbox" class="switch-input" aria-label="Switch 1" />
         <span class="switch-bg"></span>
         <span class="switch-handle"></span>
       </label>
-      <label class="switch">
+      <label class="switch" role="switch" aria-checked="false">
         <input type="checkbox" class="switch-input" aria-label="Switch 2" />
         <span class="switch-bg"></span>
         <span class="switch-handle"></span>
       </label>
-      <label class="switch">
+      <label class="switch" role="switch" aria-checked="false">
         <input type="checkbox" class="switch-input" aria-label="Switch 3" />
         <span class="switch-bg"></span>
         <span class="switch-handle"></span>
