@@ -205,9 +205,3 @@
   </body>
 </html>
 ```
-
-## Accordion Menu II
-
-```html
-
-```
