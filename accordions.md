@@ -9,7 +9,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Accordion</title>
     <style>
-      /* Resetting default styles */
+      :root {
+        --primary-color: teal;
+        --bg-color: lightsteelblue;
+        --text-color: gray;
+        --hover-color: #f0f0f0;
+      }
+
       *,
       ::after,
       ::before {
@@ -22,40 +28,45 @@
         display: grid;
         place-items: center;
         height: 100vh;
-        background: lightsteelblue;
+        background: var(--bg-color);
         font-family: sans-serif;
       }
 
       ul.accordion {
-        /* margin: 100px auto; */
         max-width: 600px;
-        /* use max-width instead of width */
+        width: 90%;
       }
 
       ul.accordion li {
         list-style: none;
         margin-bottom: 10px;
         background: #fff;
-        padding: 10px;
         border-radius: 8px;
+        overflow: hidden;
+        transition: box-shadow 0.3s ease-in-out;
       }
 
       ul.accordion li label {
-        padding: 10px;
+        padding: 15px;
         display: flex;
         justify-content: space-between;
         align-items: center;
         font-size: 18px;
-        font-weight: 500;
-        color: teal;
-        cursor: pointer;
         font-weight: bold;
+        color: var(--primary-color);
+        cursor: pointer;
+        transition: background 0.3s;
+        user-select: none;
+      }
+
+      ul.accordion li label:hover {
+        background: var(--hover-color);
       }
 
       ul.accordion li label span.greater {
         transform: rotate(-90deg);
         font-size: 22px;
-        /* color: dodgerblue; */
+        transition: transform 0.3s ease-in-out;
       }
 
       input[type="checkbox"] {
@@ -63,31 +74,32 @@
       }
 
       .accordion .content {
-        padding: 0 10px;
+        padding: 0 15px;
         line-height: 26px;
-        max-height: 0;
+        height: 0;
+        opacity: 0;
         overflow: hidden;
-        transition: max-height 0.5s;
-        color: gray;
+        transition: height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+        color: var(--text-color);
       }
 
       input[type="checkbox"]:checked ~ .content {
-        max-height: 400px;
-        transition: 0.5s ease-in-out;
+        height: auto;
+        opacity: 1;
+        padding: 15px;
       }
 
-      /* Apply styles when the checkbox is checked 
-     Added these below
-    */
-
-      input[type="checkbox"]:is(:checked) + label span.greater {
+      input[type="checkbox"]:checked + label span.greater {
         transform: rotate(90deg);
-        transition: transform 0.3s ease-in-out;
       }
 
-      /* input[type="checkbox"]:is():checked ul.accordion li {
-      box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.5);
-    } */
+      input[type="checkbox"]:checked + label {
+        background: var(--hover-color);
+      }
+
+      input[type="checkbox"]:checked ~ .content {
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      }
     </style>
   </head>
 
