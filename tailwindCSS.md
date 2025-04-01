@@ -17,7 +17,7 @@ line-clamp-2
 truncate -> paragraph text on one live the rest is hidden
 
 /* Gradient background with specific color stops */
-h-48 w-full bg-gradient-to-r from-orange-500 to-black via-white	from-20% via-70% to-90%
+h-48 w-full bg-gradient-to-r from-orange-500 to-black via-white from-20% via-70% to-90%
 ```
 
 ## Fluid text sizing
