@@ -1,4 +1,4 @@
-## Random tailwind class tips
+# Tailwind class tips
 
 ```css
 /* Utility classes for sizing */
