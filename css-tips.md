@@ -15,7 +15,7 @@
 - [new morphism](#new-morphism)
 - [checkboxes](#checkboxes)
 - [glass morphism](#glass-morphism)
-- [:not() and :has()](#not-and-has)
+- [not() and has()](#not-and-has)
 - [gradient on text](#gradient-on-text)
 - [dropdown](#dropdown)
 - [numbering headings](#numbering-headings)
@@ -275,7 +275,7 @@ body {
 }
 ```
 
-## :not() and :has()
+## not() and has()
 
 ```css
 .button:not(:first-child) {
