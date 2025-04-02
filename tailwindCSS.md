@@ -1,5 +1,7 @@
 # Tailwind class tips
 
+## Utility classes
+
 ```css
 /* Utility classes for sizing */
 w-48 h-48 -> size-48
